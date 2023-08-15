@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Arrays\Hard\" />
+    <Folder Include="Arrays\Medium\" />
+    <Folder Include="Backtracking\" />
+    <Folder Include="Binary Search\" />
+    <Folder Include="Dynamic Programming\" />
+    <Folder Include="Graphs\" />
+    <Folder Include="Greedy\" />
+    <Folder Include="Hashing\" />
+    <Folder Include="Heaps\" />
+    <Folder Include="Linked Lists\" />
+    <Folder Include="Queues\" />
+    <Folder Include="Stacks\" />
+    <Folder Include="Strings\" />
+    <Folder Include="Trees\" />
+  </ItemGroup>
+
+</Project>
