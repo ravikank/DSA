@@ -5,9 +5,7 @@ namespace DSA.Tests.Arrays.Easy
     public class EvenNumberOfDigitFinderTest
     {
         [Theory]
-        [InlineData(new[] { 12, 345, 2, 6, 7896 }, 2)]
-        [InlineData(new[] { 555, 901, 482, 1771 }, 1)]
-        [InlineData(new[] { 22, 4444, 666666, 1, 333, 55555 }, 3)]
+        [MemberData(nameof(GenerateTestData))]
         public void GivenValidArray_Find_ShouldReturnEvenNumberOfDigitsUsingIterativeStrategyTest(int[] numbers, int expected)
         {
             // Arrange
@@ -22,9 +20,7 @@ namespace DSA.Tests.Arrays.Easy
         }
 
         [Theory]
-        [InlineData(new[] { 12, 345, 2, 6, 7896 }, 2)]
-        [InlineData(new[] { 555, 901, 482, 1771 }, 1)]
-        [InlineData(new[] { 22, 4444, 666666, 1, 333, 55555 }, 3)]
+        [MemberData(nameof(GenerateTestData))]
         public void GivenValidArray_Find_ShouldReturnEvenNumberOfDigitsUsingRecursiveStrategyTest(int[] numbers, int expected)
         {
             // Arrange
@@ -39,9 +35,7 @@ namespace DSA.Tests.Arrays.Easy
         }
 
         [Theory]
-        [InlineData(new[] { 12, 345, 2, 6, 7896 }, 2)]
-        [InlineData(new[] { 555, 901, 482, 1771 }, 1)]
-        [InlineData(new[] { 22, 4444, 666666, 1, 333, 55555 }, 3)]
+        [MemberData(nameof(GenerateTestData))]
         public void GivenValidArray_Find_ShouldReturnEvenNumberOfDigitsUsingConvertToStringStrategyTest(int[] numbers, int expected)
         {
             // Arrange
@@ -56,9 +50,7 @@ namespace DSA.Tests.Arrays.Easy
         }
 
         [Theory]
-        [InlineData(new[] { 12, 345, 2, 6, 7896 }, 2)]
-        [InlineData(new[] { 555, 901, 482, 1771 }, 1)]
-        [InlineData(new[] { 22, 4444, 666666, 1, 333, 55555 }, 3)]
+        [MemberData(nameof(GenerateTestData))]
         public void GivenValidArray_Find_ShouldReturnEvenNumberOfDigitsUsingLogarithmStrategyTest(int[] numbers, int expected)
         {
             // Arrange
@@ -70,6 +62,13 @@ namespace DSA.Tests.Arrays.Easy
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+
+        public static IEnumerable<object[]> GenerateTestData()
+        {
+            yield return new object[] { new int[] { 12, 345, 2, 6, 7896 }, 2 };
+            yield return new object[] { new int[] { 555, 901, 482, 1771 }, 1 };
+            yield return new object[] { new int[] { 22, 4444, 666666, 1, 333, 55555 }, 3 };
         }
     }
 }

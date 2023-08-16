@@ -5,15 +5,7 @@ namespace DSA.Tests.Arrays.Easy
     public class MaxConsecutiveOnesFinderTest
     {
         [Theory]
-        [InlineData(new[] { 1, 1, 0, 1, 1, 1 }, 3)]
-        [InlineData(new[] { 1, 0, 1, 1, 0, 1 }, 2)]
-        [InlineData(new[] { 0, 0, 0, 0, 0, 0 }, 0)]
-        [InlineData(new[] { 1, 1, 1, 1, 1, 1 }, 6)]
-        [InlineData(new[] { 1, 1, 1, 0, 1, 1 }, 3)]
-        [InlineData(new[] { 1, 1, 1, 0, 1, 1, 1 }, 3)]
-        [InlineData(new[] { 1, 1, 1, 0, 1, 1, 1, 1 }, 4)]
-        [InlineData(new[] { 1, 1, 1, 0, 1, 1, 1, 1, 1 }, 5)]
-        [InlineData(new[] { 1, 1, 1, 0, 1, 1, 1, 1, 1, 1 }, 6)]
+        [MemberData(nameof(GenerateTestData))]
         public void GivenValidArray_Find_ShouldReturnMaxConsecutiveOnes(int[] nums, int expected)
         {
             // Arrange
@@ -22,6 +14,19 @@ namespace DSA.Tests.Arrays.Easy
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+
+        public static IEnumerable<object[]> GenerateTestData()
+        {
+            yield return new object[] { new[] { 1, 1, 0, 1, 1, 1 }, 3 };
+            yield return new object[] { new[] { 1, 0, 1, 1, 0, 1 }, 2 };
+            yield return new object[] { new[] { 0, 0, 0, 0, 0, 0 }, 0 };
+            yield return new object[] { new[] { 1, 1, 1, 1, 1, 1 }, 6 };
+            yield return new object[] { new[] { 1, 1, 1, 0, 1, 1 }, 3 };
+            yield return new object[] { new[] { 1, 1, 1, 0, 1, 1, 1 }, 3 };
+            yield return new object[] { new[] { 1, 1, 1, 0, 1, 1, 1, 1 }, 4 };
+            yield return new object[] { new[] { 1, 1, 1, 0, 1, 1, 1, 1, 1 }, 5 };
+            yield return new object[] { new[] { 1, 1, 1, 0, 1, 1, 1, 1, 1, 1 }, 6 };
         }
     }
 }
